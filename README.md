@@ -1,0 +1,1 @@
+# NNP-for-Ga2O3
