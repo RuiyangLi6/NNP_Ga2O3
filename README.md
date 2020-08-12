@@ -1,4 +1,4 @@
-# NNP-for-Ga2O3
+# Neural Network Potential for Beta-Ga2O3
 Here are the training data sets and trained potential for beta-Ga2O3 crystal.
 
 1) First, there are two data sets. In the folder "raw_with0K", we have ab initio raw data of Ga2O3 at 0 K (DFT) and finite temperatures (50 - 600 K), which corresponds to 9200 snapshots in total. In the folder "raw_without0K", only AIMD data at finite temperatures is included. The data sets are prepared in the format of numpy binary data that can be directly used by the training program.
