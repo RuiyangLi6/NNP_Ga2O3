@@ -1,0 +1,59 @@
+{
+    "model": {
+        "descriptor": {
+            "type": "se_a",
+            "sel": [
+                76,
+                76
+            ],
+            "rcut_smth": 5.8,
+            "rcut": 6.0,
+            "neuron": [
+                40,
+                80
+            ],
+            "axis_neuron": 4,
+            "resnet_dt": false,
+            "seed": 1
+        },
+        "fitting_net": {
+            "neuron": [
+                160,
+                160,
+                160
+            ],
+            "resnet_dt": true,
+            "seed": 1
+        }
+    },
+    "learning_rate": {
+        "type": "exp",
+        "decay_steps": 10000,
+        "decay_rate": 0.95,
+        "start_lr": 0.005
+    },
+    "loss": {
+        "start_pref_e": 0.1,
+        "limit_pref_e": 0.1,
+        "start_pref_f": 1000,
+        "limit_pref_f": 1,
+        "start_pref_v": 0.0,
+        "limit_pref_v": 0.0
+    },
+    "training": {
+        "systems": [
+            "../raw/"
+        ],
+        "set_prefix": "set",
+        "stop_batch": 2000000,
+        "batch_size": 1,
+        "seed": 1,
+        "disp_file": "lcurve.out",
+        "disp_freq": 1000,
+        "numb_test": 100,
+        "save_freq": 1000,
+        "save_ckpt": "./model.ckpt",
+        "disp_training": true,
+        "time_training": true
+    }
+}

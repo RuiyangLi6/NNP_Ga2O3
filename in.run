@@ -1,0 +1,25 @@
+# Ga2O3 MD simulation
+log         md.log
+boundary    p p p
+atom_style  atomic
+
+units metal
+
+variable  T   equal  300       # K
+variable  dt  equal  0.001     # timestep 1 fs
+
+read_data   ga2o3.data
+
+timestep    ${dt}
+
+pair_style	deepmd Ga2O3.pb
+pair_coeff	
+
+neighbor        2.0 bin
+neigh_modify    every 10 delay 0 check yes
+
+velocity     all create $T 59127 mom yes rot yes dist gaussian
+fix          1 all npt temp $T $T 0.1 aniso 0 0 1
+
+run          100000
+
